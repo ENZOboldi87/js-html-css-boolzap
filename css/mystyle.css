@@ -211,6 +211,14 @@ img.avatar {
     padding: 25px;
   }
 
+  .homepage-content {
+    width: calc(100% - 350px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: darkgray;
+  }
+
   .content .chat .user_chat {
     flex-direction: column;
     display: flex;

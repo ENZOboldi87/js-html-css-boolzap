@@ -1,19 +1,31 @@
 $(document).ready(function() {
- $('.contacts ul li').click(function(){
+  // di default il contenuto delle chat viene nascosto
+  $('.content').hide();
+
+  // al click sulle chat
+  $('.contacts ul li').click(function(){
+   // effetto sulla chat selezionata(grigio scuro)
    $('ul li').removeClass('selected');
    $(this).addClass('selected');
+   // in fase beta: mostrare le chat in base al numero(data element 1,2,3,4 etc)
    var dataElement = $(this).attr('data-element');
-   if ($('.chat .user_chat').hasClass('d-flex')) {
+   if ($('.chat .user_chat').hasClass('d-none')) {
      $('.chat .user_chat').removeClass('d-flex');
    }
    var selettore = '.chat .user_chat[data-user="' + dataElement + '"]';
    $(selettore).addClass('d-flex');
+   // quando si seleziona una chat il contenuto viene mostrato e viene nascosta la schermata homepage
+   $('.homepage-content').hide();
+   $('.content').show();
+
+
+
 
  })
 
+// quando passo il cursore sulle chat da effetto hover
  $('.contacts ul li').hover(function() {
    $(this).addClass('selected_hover');
-
  }, function() {
    $(this).removeClass('selected_hover');
  });
@@ -23,20 +35,20 @@ $(document).ready(function() {
    Cerca();
  });
 
+// quando premo invio e invia il messaggio
  $('.message input').keyup(function() {
    if (event.which === 13 || event.keyCode === 13) {
      invioMessaggio();
    }
  });
 
+
+// prova per cambiare icona
  $('.message i.fab').click(function() {
    alert('funziona');
    $('input').val('');
 
  });
-
-
-
 
  // funzioni
 // funzione per inviare il messaggio
