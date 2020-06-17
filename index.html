@@ -17,7 +17,6 @@
     <div class="background_webapp">
       <!-- user interface -->
       <div class="userInterface_web">
-
         <!-- left sidebar -->
         <div class="sidebar float-left">
           <!-- top left header sidebar -->
@@ -32,25 +31,25 @@
           <!-- ends top left header sidebar -->
           <!-- notification bar -->
           <div class="notification_bar d-flex">
-          <i class="fas fa-bell-slash"></i>
-          <div class="text_noti_bar">
-            <h2>Get notified of new messages</h2>
-            <h3>Turn on desktop notificatons</h3>
+            <i class="fas fa-bell-slash"></i>
+            <div class="text_noti_bar">
+              <h2>Get notified of new messages</h2>
+              <h3>Turn on desktop notificatons</h3>
+            </div>
           </div>
-        </div>
           <!-- ends notification bar -->
         <!-- search bar -->
           <div class="search">
-          <div class="box_search">
-            <input id="search" type="search" value="" placeholder="Search or start a new chat">
+            <div class="box_search">
+              <input id="search" type="search" value="" placeholder="Search or start a new chat">
+            </div>
           </div>
-        </div>
           <!-- ends search bar -->
           <!-- contacts bar -->
           <div class="contacts">
             <ul class="list-unstyled">
-              <li class="">
-                <div class="user" data-element="0">
+              <li data-element="0">
+                <div class="user">
                   <img id="profilo" src="img/avatar_1.jpg" alt="profile_picture">
                   <div class="text_contacts">
                     <h2>Michele</h2>
@@ -59,8 +58,8 @@
                     <span id="date">17:53</span>
                 </div>
               </li>
-              <li>
-                <div class="user" data-element="1">
+              <li data-element="1">
+                <div class="user" >
                   <img id="profilo" src="img/avatar_2.jpg" alt="profile_picture">
                   <div class="text_contacts">
                     <h2>Fabio</h2>
@@ -69,8 +68,8 @@
                     <span id="date">17:53</span>
                 </div>
               </li>
-              <li>
-                <div class="user" data-element="2">
+              <li data-element="2">
+                <div class="user">
                   <img id="profilo" src="img/avatar_3.jpg" alt="profile_picture">
                   <div class="text_contacts">
                     <h2>Samuele</h2>
@@ -79,8 +78,8 @@
                     <span id="date">17:53</span>
                 </div>
               </li>
-              <li>
-                <div class="user" data-element="3">
+              <li data-element="3">
+                <div class="user">
                   <img id="profilo" src="img/avatar_4.jpg" alt="profile_picture">
                   <div class="text_contacts">
                     <h2>Alessandro B.</h2>
@@ -89,8 +88,8 @@
                     <span id="date">17:53</span>
                 </div>
               </li>
-              <li>
-                <div class="user" data-element="4">
+              <li data-element="4">
+                <div class="user">
                   <img id="profilo" src="img/avatar_5.jpg" alt="profile_picture">
                   <div class="text_contacts">
                     <h2>Alessandro L.</h2>
@@ -99,8 +98,8 @@
                     <span id="date">17:53</span>
                 </div>
               </li>
-              <li>
-                <div class="user" data-element="5">
+              <li data-element="5">
+                <div class="user">
                   <img id="profilo" src="img/avatar_6.jpg" alt="profile_picture">
                   <div class="text_contacts">
                     <h2>Claudia</h2>
@@ -109,8 +108,8 @@
                     <span id="date">17:53</span>
                 </div>
               </li>
-              <li>
-                <div class="user" data-element="6">
+              <li data-element="6">
+                <div class="user">
                   <img id="profilo" src="img/avatar_7.jpg" alt="profile_picture">
                   <div class="text_contacts">
                     <h2>Davide</h2>
@@ -119,8 +118,8 @@
                     <span id="date">17:53</span>
                 </div>
               </li>
-              <li>
-                <div class="user" data-element="8">
+              <li data-element="7">
+                <div class="user">
                   <img id="profilo" src="img/avatar_8.jpg" alt="profile_picture">
                   <div class="text_contacts">
                     <h2>Federico</h2>
@@ -134,18 +133,80 @@
           <!-- ends contacts bar-->
         </div>
         <!-- ends left sidebar -->
-
         <!-- content -->
         <div class="content float-left">
           <!-- top header content -->
           <div class="top_header_bar d-flex">
-            <div class="contact d-flex">
+            <div class="contact d-flex" data-head="0">
               <div class="image-contact">
                 <img class="avatar" src="img/avatar_1.jpg" alt="profile_picture">
               </div>
               <div class="access_contact">
                 <h2>Michele</h2>
-                <h3>Ultimo accesso oggi alle 15:40</h3>
+                <h3>Ultimo accesso oggi alle <span id="time-last-access">15:40</span></h3>
+              </div>
+            </div>
+            <div class="contact d-none" data-head="1">
+              <div class="image-contact">
+                <img class="avatar" src="img/avatar_2.jpg" alt="profile_picture">
+              </div>
+              <div class="access_contact">
+                <h2>Fabio</h2>
+                <h3>Ultimo accesso oggi alle <span id="time-last-access">15:40</span></h3>
+              </div>
+            </div>
+            <div class="contact d-none" data-head="2">
+              <div class="image-contact">
+                <img class="avatar" src="img/avatar_3.jpg" alt="profile_picture">
+              </div>
+              <div class="access_contact">
+                <h2>Samuele</h2>
+                <h3>Ultimo accesso oggi alle <span id="time-last-access">15:40</span></h3>
+              </div>
+            </div>
+            <div class="contact d-none" data-head="3">
+              <div class="image-contact">
+                <img class="avatar" src="img/avatar_4.jpg" alt="profile_picture">
+              </div>
+              <div class="access_contact">
+                <h2>Alessandro B.</h2>
+                <h3>Ultimo accesso oggi alle <span id="time-last-access">15:40</span></h3>
+              </div>
+            </div>
+            <div class="contact d-none" data-head="4">
+              <div class="image-contact">
+                <img class="avatar" src="img/avatar_5.jpg" alt="profile_picture">
+              </div>
+              <div class="access_contact">
+                <h2>Alessandro L.</h2>
+                <h3>Ultimo accesso oggi alle <span id="time-last-access">15:40</span></h3>
+              </div>
+            </div>
+            <div class="contact d-none" data-head="5">
+              <div class="image-contact">
+                <img class="avatar" src="img/avatar_6.jpg" alt="profile_picture">
+              </div>
+              <div class="access_contact">
+                <h2>Claudia</h2>
+                <h3>Ultimo accesso oggi alle <span id="time-last-access">15:40</span></h3>
+              </div>
+            </div>
+            <div class="contact d-none" data-head="6">
+              <div class="image-contact">
+                <img class="avatar" src="img/avatar_7.jpg" alt="profile_picture">
+              </div>
+              <div class="access_contact">
+                <h2>Davide</h2>
+                <h3>Ultimo accesso oggi alle <span id="time-last-access">15:40</span></h3>
+              </div>
+            </div>
+            <div class="contact d-none" data-head="7">
+              <div class="image-contact">
+                <img class="avatar" src="img/avatar_8.jpg" alt="profile_picture">
+              </div>
+              <div class="access_contact">
+                <h2>Federico</h2>
+                <h3>Ultimo accesso oggi alle <span id="time-last-access">15:40</span></h3>
               </div>
             </div>
             <div class="icons">
@@ -157,20 +218,91 @@
           <!-- ends top header content -->
           <!-- chat -->
           <div class="chat">
-            <div class="user_chat d-flex">
+            <div class="user_chat d-flex" data-user="0">
+              <div class="box_chat send">
+                <p>questo e il messaggio scritto dall utente</p>
+                <span>12:46</span>
+              </div>
+              <div class="box_chat receive">
+                <p>questa e la chat di Michele</p>
+                <span>12:46</span>
+              </div>
+            </div>
+            <div class="user_chat d-none" data-user="1">
               <div class="box_chat send">
                 <p>questo e il messaggio scritto dall utente</p>
               </div>
               <div class="box_chat receive">
-                <p>questo e il messaggio ricevuto</p>
+                <p>Fabio</p>
+                <span>12:46</span>
+              </div>
+            </div>
+            <div class="user_chat d-none" data-user="2">
+              <div class="box_chat send">
+                <p>questo e il messaggio scritto dall utente</p>
+                <span>12:46</span>
+              </div>
+              <div class="box_chat receive">
+                <p>Samuele</p>
+                <span>12:46</span>
+              </div>
+            </div>
+            <div class="user_chat d-none" data-user="3">
+              <div class="box_chat send">
+                <p>questo e il messaggio scritto dall utente</p>
+                <span>12:46</span>
+              </div>
+              <div class="box_chat receive">
+                <p>Alessandro B</p>
+                <span>12:46</span>
+              </div>
+            </div>
+            <div class="user_chat d-none" data-user="4">
+              <div class="box_chat send">
+                <p>questo e il messaggio scritto dall utente</p>
+                <span>12:46</span>
+              </div>
+              <div class="box_chat receive">
+                <p>Alessandro l</p>
+                <span>12:46</span>
+              </div>
+            </div>
+            <div class="user_chat d-none" data-user="5">
+              <div class="box_chat send">
+                <p>questo e il messaggio scritto dall utente</p>
+                <span>12:46</span>
+              </div>
+              <div class="box_chat receive">
+                <p>claudia</p>
+                <span>12:46</span>
+              </div>
+            </div>
+            <div class="user_chat d-none" data-user="6">
+              <div class="box_chat send">
+                <p>questo e il messaggio scritto dall utente</p>
+                <span>12:46</span>
+              </div>
+              <div class="box_chat receive">
+                <p>davide</p>
+                <span>12:46</span>
+              </div>
+            </div>
+            <div class="user_chat d-none" data-user="7">
+              <div class="box_chat send">
+                <p>questo e il messaggio scritto dall utente</p>
+                <span>12:46</span>
+              </div>
+              <div class="box_chat receive">
+                <p>federico</p>
+                <span>12:46</span>
               </div>
             </div>
           </div>
           <div class="message">
             <i class="far fa-smile"></i>
             <input type="text" name="" value="" placeholder="Scrivi un messaggio">
-            <i class="fab fa-telegram-plane"></i>
-            <i class="fas fa-microphone d-none"></i>
+            <i class="fab fa-telegram-plane d-none"></i>
+            <i class="fas fa-microphone "></i>
           </div>
         </div>
       </div>
@@ -178,8 +310,9 @@
   </main>
 
   <div class="template">
-    <div class="box_chat send">
+    <div class="box_chat">
       <p class="text-break"></p>
+      <span></span>
     </div>
   </div>
   <script src="js/myscript.js" charset="utf-8"></script>

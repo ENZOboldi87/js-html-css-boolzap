@@ -141,10 +141,14 @@ img.avatar {
   }
 
   .active {
+    display: block;
+  }
+
+  .selected {
     background-color: #e0e0e0;
   }
 
-  .active_hover {
+  .selected_hover {
     background-color: #f1f1f1;
   }
 
@@ -182,8 +186,10 @@ img.avatar {
   .content {
     width: calc(100% - 350px);
     height: 100%;
+    display: flex;
+    flex-direction: column;
   }
-  
+
   /* content top header */
   .content .top_header_bar {
     justify-content: space-between;
@@ -199,14 +205,15 @@ img.avatar {
   /* ends content top header */
 
   .content .chat {
-    height: calc(100% - 140px);
+    height: 100%;
     background-image: url(../img/mine.jpg);
     overflow-y: scroll;
-    padding: 20px;
+    padding: 25px;
   }
 
   .content .chat .user_chat {
     flex-direction: column;
+    display: flex;
   }
 
 
@@ -217,6 +224,11 @@ img.avatar {
     margin: 16px 0;
     padding: 10px;
     line-height: 22px;
+  }
+
+  .box_chat>span {
+    float: right;
+    font-size: 12px;
   }
 
   .content .chat .receive {
@@ -232,10 +244,10 @@ img.avatar {
 
   .content > .message {
     display: flex;
-    height: 70px;
     justify-content: space-evenly;
     align-items: center;
     background-color: #f3eeea;
+    padding: 10px;
   }
 
   .message input {
