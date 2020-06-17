@@ -18,6 +18,11 @@ $(document).ready(function() {
    $(this).removeClass('selected_hover');
  });
 
+ // cerca contatto
+ $('#search').keyup(function() {
+   Cerca();
+ });
+
  $('.message input').keyup(function() {
    if (event.which === 13 || event.keyCode === 13) {
      invioMessaggio();
@@ -29,6 +34,8 @@ $(document).ready(function() {
    $('input').val('');
 
  });
+
+
 
 
  // funzioni
@@ -67,7 +74,6 @@ $(document).ready(function() {
 
  }
 
-
 // funzione per ricevere il messaggio
  function riceviMessaggio() {
    // qua ho provato ad usare una versione abbreviata e concatenata
@@ -88,6 +94,22 @@ $(document).ready(function() {
  function ScrollaPagina() {
      var altezzaPagina = $('.user_chat.d-flex').height();
      $('.chat').scrollTop(altezzaPagina);
+ }
+
+ // funzione cerca
+ function Cerca() {
+   var cerca = $('#search').val().toLowerCase();
+   // cerco un contatto
+   $('.user').each(function() {
+     var utente = $(this).find('h2').text().toLowerCase();
+     if (utente.includes(cerca)) {
+       $(this).show();
+     } else {
+       $(this).hide();
+     }
+
+   });
+
  }
 
 
