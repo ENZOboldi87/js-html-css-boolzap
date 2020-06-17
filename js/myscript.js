@@ -21,13 +21,13 @@ $(document).ready(function() {
  $('.message input').keyup(function() {
    if (event.which === 13 || event.keyCode === 13) {
      invioMessaggio();
-    riceviMessaggio();
    }
  });
 
  $('.message i.fab').click(function() {
    alert('funziona');
    $('input').val('');
+
  });
 
 
@@ -50,29 +50,33 @@ $(document).ready(function() {
     var minutiCorrenti = data.getMinutes();
     var oraAttuale = aggiungiZeroAllaData(oraCorrente) + ':' + aggiungiZeroAllaData(minutiCorrenti);
     nuovoMessaggio.children('.box_chat span').text(oraAttuale);
-
+    $('.chat').scrollTop('.user_chat').height();
     // e lo appendo alla chat
     $('.user_chat').append(nuovoMessaggio);
 
     // pulisco l input
     $('input').val('');
 
+    ScrollaPagina();
+    // dopo due secondi parte il messaggio di risposta
+    setTimeout(riceviMessaggio, 2000);
+
+
    }
+
 
  }
 
+
+// funzione per ricevere il messaggio
  function riceviMessaggio() {
-   if (messaggio != '') {
-     setTimeout(function () {
-       $('.template .box_chat p').text('ok');
-       $('.template .box_chat').clone().addClass('receive').appendTo('.user_chat');
-     }, 2000);
+   // qua ho provato ad usare una versione abbreviata e concatenata
+  $('.template .box_chat p').text('ok');
+  $('.template .box_chat').clone().addClass('receive').appendTo('.user_chat');
+  ScrollaPagina();
+  }
 
-   }
-
- }
-
-
+// funzione che aggiunge uno zero alla data
  function aggiungiZeroAllaData(numero) {
    if (numero < 10) {
      return '0' + numero;
@@ -80,9 +84,13 @@ $(document).ready(function() {
    return numero;
  }
 
+// funzione per far scrollare la pagina
+ function ScrollaPagina() {
+     var altezzaPagina = $('.user_chat.d-flex').height();
+     $('.chat').scrollTop(altezzaPagina);
+ }
 
 
-// scrolla alla fine della finestra
 
 
 
