@@ -1,6 +1,7 @@
 $(document).ready(function() {
-  // di default il contenuto delle chat viene nascosto
+  // di default alcuni contenuti sono nascosti
   $('.content').hide();
+  $('.teleg').hide();
 
   // al click sulle chat
   $('.contacts ul li').click(function(){
@@ -17,10 +18,6 @@ $(document).ready(function() {
    // quando si seleziona una chat il contenuto viene mostrato e viene nascosta la schermata homepage
    $('.homepage-content').hide();
    $('.content').show();
-
-
-
-
  })
 
 // quando passo il cursore sulle chat da effetto hover
@@ -39,18 +36,26 @@ $(document).ready(function() {
  $('.message input').keyup(function() {
    if (event.which === 13 || event.keyCode === 13) {
      invioMessaggio();
+     $('.teleg').hide();
+     $('.microph').show();
    }
  });
 
+// cambio icona se ho del testo nell input
+$(document).on('.message input', 'input', function () {
+ if ($(this).val().trim().length === 0) {
+   $('.teleg').hide();
+   $('.microph').show();
+ }
+ else {
+   $('.microph').hide();
+   $('.teleg').show();
+ }
+});
 
-// prova per cambiare icona
- $('.message i.fab').click(function() {
-   alert('funziona');
-   $('input').val('');
 
- });
+// FUNZIONI
 
- // funzioni
 // funzione per inviare il messaggio
  function invioMessaggio() {
    var messaggio = $('.message input').val();
@@ -62,7 +67,6 @@ $(document).ready(function() {
     nuovoMessaggio.children('.box_chat p').text(messaggio);
     // e lo appendo alla classe send(messaggio inviato)
     nuovoMessaggio.addClass('send');
-
     // inserisco la data
     var data = new Date();
     var oraCorrente = data.getHours();
@@ -72,18 +76,13 @@ $(document).ready(function() {
     $('.chat').scrollTop('.user_chat').height();
     // e lo appendo alla chat
     $('.user_chat').append(nuovoMessaggio);
-
     // pulisco l input
     $('input').val('');
-
+    // scrollo la pagina
     ScrollaPagina();
     // dopo due secondi parte il messaggio di risposta
     setTimeout(riceviMessaggio, 2000);
-
-
    }
-
-
  }
 
 // funzione per ricevere il messaggio
@@ -123,18 +122,5 @@ $(document).ready(function() {
    });
 
  }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 });

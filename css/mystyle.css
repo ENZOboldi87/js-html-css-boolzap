@@ -266,7 +266,7 @@ img.avatar {
     padding: 10px;
   }
 
-  .message>i {
+  .icon>i, .message>i {
     font-size: 25px;
     cursor: pointer;
   }
