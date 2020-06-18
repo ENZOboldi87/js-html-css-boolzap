@@ -33,7 +33,7 @@
           <div class="notification_bar d-flex">
             <i class="fas fa-bell-slash"></i>
             <div class="text_noti_bar">
-              <h2>Get notified of new messages</h2>
+              <h2 class="noti-text">Get notified of new messages</h2>
               <h3>Turn on desktop notificatons</h3>
             </div>
           </div>
@@ -52,7 +52,7 @@
                 <div class="user">
                   <img id="profilo" src="img/avatar_1.jpg" alt="profile_picture">
                   <div class="text_contacts">
-                    <h2>Michele</h2>
+                    <h2 class="contact-name">Michele</h2>
                     <h3>Non poteva esere altrimenti</h3>
                   </div>
                     <span id="date">17:53</span>
@@ -62,7 +62,7 @@
                 <div class="user" >
                   <img id="profilo" src="img/avatar_2.jpg" alt="profile_picture">
                   <div class="text_contacts">
-                    <h2>Fabio</h2>
+                    <h2 class="contact-name">Fabio</h2>
                     <h3>Non poteva esere altrimenti</h3>
                   </div>
                     <span id="date">17:53</span>
@@ -72,7 +72,7 @@
                 <div class="user">
                   <img id="profilo" src="img/avatar_3.jpg" alt="profile_picture">
                   <div class="text_contacts">
-                    <h2>Samuele</h2>
+                    <h2 class="contact-name">Samuele</h2>
                     <h3>Non poteva esere altrimenti</h3>
                   </div>
                     <span id="date">17:53</span>
@@ -82,7 +82,7 @@
                 <div class="user">
                   <img id="profilo" src="img/avatar_4.jpg" alt="profile_picture">
                   <div class="text_contacts">
-                    <h2>Alessandro B.</h2>
+                    <h2 class="contact-name">Alessandro B.</h2>
                     <h3>Non poteva esere altrimenti</h3>
                   </div>
                     <span id="date">17:53</span>
@@ -92,7 +92,7 @@
                 <div class="user">
                   <img id="profilo" src="img/avatar_5.jpg" alt="profile_picture">
                   <div class="text_contacts">
-                    <h2>Alessandro L.</h2>
+                    <h2 class="contact-name">Alessandro L.</h2>
                     <h3>Non poteva esere altrimenti</h3>
                   </div>
                     <span id="date">17:53</span>
@@ -102,7 +102,7 @@
                 <div class="user">
                   <img id="profilo" src="img/avatar_6.jpg" alt="profile_picture">
                   <div class="text_contacts">
-                    <h2>Claudia</h2>
+                    <h2 class="contact-name">Claudia</h2>
                     <h3>Non poteva esere altrimenti</h3>
                   </div>
                     <span id="date">17:53</span>
@@ -112,7 +112,7 @@
                 <div class="user">
                   <img id="profilo" src="img/avatar_7.jpg" alt="profile_picture">
                   <div class="text_contacts">
-                    <h2>Davide</h2>
+                    <h2 class="contact-name">Davide</h2>
                     <h3>Non poteva esere altrimenti</h3>
                   </div>
                     <span id="date">17:53</span>
@@ -122,7 +122,7 @@
                 <div class="user">
                   <img id="profilo" src="img/avatar_8.jpg" alt="profile_picture">
                   <div class="text_contacts">
-                    <h2>Federico</h2>
+                    <h2 class="contact-name">Federico</h2>
                     <h3>Non poteva esere altrimenti</h3>
                   </div>
                     <span id="date">17:53</span>
@@ -146,7 +146,7 @@
                 <img class="avatar" src="img/avatar_1.jpg" alt="profile_picture">
               </div>
               <div class="access_contact">
-                <h2>Michele</h2>
+                <h2 class="access_name_contact">Michele</h2>
                 <h3>Ultimo accesso oggi alle <span id="time-last-access">15:40</span></h3>
               </div>
             </div>
@@ -224,81 +224,220 @@
           <div class="chat">
             <div class="user_chat d-none" data-user="0">
               <div class="box_chat send">
-                <p>questo e il messaggio scritto dall utente</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 <span>12:46</span>
+                <i class="fas fa-chevron-down"></i>
+                <div class="dropdown">
+                  <ul class="list-unstyled">
+                    <li>Info Messaggio</li>
+                    <li>Cancella Messaggio</li>
+                  </ul>
+                </div>
               </div>
               <div class="box_chat receive">
-                <p>questa e la chat di Michele</p>
+                <p>ok</p>
                 <span>12:46</span>
+                <i class="fas fa-chevron-down"></i>
+                <div class="dropdown">
+                  <ul class="list-unstyled">
+                    <li>Info Messaggio</li>
+                    <li>Cancella Messaggio</li>
+                  </ul>
+                </div>
               </div>
             </div>
             <div class="user_chat d-none" data-user="1">
               <div class="box_chat send">
                 <p>questo e il messaggio scritto dall utente</p>
+                <span>12:46</span>
+                <div class="arrow">
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="dropdown">
+                  <ul class="list-unstyled">
+                    <li>Info Messaggio</li>
+                    <li>Cancella Messaggio</li>
+                  </ul>
+                </div>
               </div>
               <div class="box_chat receive">
                 <p>Fabio</p>
                 <span>12:46</span>
+                <div class="arrow">
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="dropdown">
+                  <ul class="list-unstyled">
+                    <li>Info Messaggio</li>
+                    <li>Cancella Messaggio</li>
+                  </ul>
+                </div>
               </div>
             </div>
             <div class="user_chat d-none" data-user="2">
               <div class="box_chat send">
                 <p>questo e il messaggio scritto dall utente</p>
                 <span>12:46</span>
+                <div class="arrow">
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="dropdown">
+                  <ul class="list-unstyled">
+                    <li>Info Messaggio</li>
+                    <li>Cancella Messaggio</li>
+                  </ul>
+                </div>
               </div>
               <div class="box_chat receive">
                 <p>Samuele</p>
                 <span>12:46</span>
+                <div class="arrow">
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="dropdown">
+                  <ul class="list-unstyled">
+                    <li>Info Messaggio</li>
+                    <li>Cancella Messaggio</li>
+                  </ul>
+                </div>
               </div>
             </div>
             <div class="user_chat d-none" data-user="3">
               <div class="box_chat send">
                 <p>questo e il messaggio scritto dall utente</p>
                 <span>12:46</span>
+                <div class="arrow">
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="dropdown">
+                  <ul class="list-unstyled">
+                    <li>Info Messaggio</li>
+                    <li>Cancella Messaggio</li>
+                  </ul>
+                </div>
               </div>
               <div class="box_chat receive">
                 <p>Alessandro B</p>
                 <span>12:46</span>
+                <div class="arrow">
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="dropdown">
+                  <ul class="list-unstyled">
+                    <li>Info Messaggio</li>
+                    <li>Cancella Messaggio</li>
+                  </ul>
+                </div>
               </div>
             </div>
             <div class="user_chat d-none" data-user="4">
               <div class="box_chat send">
                 <p>questo e il messaggio scritto dall utente</p>
                 <span>12:46</span>
+                <div class="arrow">
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="dropdown">
+                  <ul class="list-unstyled">
+                    <li>Info Messaggio</li>
+                    <li>Cancella Messaggio</li>
+                  </ul>
+                </div>
               </div>
               <div class="box_chat receive">
                 <p>Alessandro l</p>
                 <span>12:46</span>
+                <div class="arrow">
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="dropdown">
+                  <ul class="list-unstyled">
+                    <li>Info Messaggio</li>
+                    <li>Cancella Messaggio</li>
+                  </ul>
+                </div>
               </div>
             </div>
             <div class="user_chat d-none" data-user="5">
               <div class="box_chat send">
                 <p>questo e il messaggio scritto dall utente</p>
                 <span>12:46</span>
+                <div class="arrow">
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="dropdown">
+                  <ul class="list-unstyled">
+                    <li>Info Messaggio</li>
+                    <li>Cancella Messaggio</li>
+                  </ul>
+                </div>
               </div>
               <div class="box_chat receive">
                 <p>claudia</p>
                 <span>12:46</span>
+                <div class="arrow">
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="dropdown">
+                  <ul class="list-unstyled">
+                    <li>Info Messaggio</li>
+                    <li>Cancella Messaggio</li>
+                  </ul>
+                </div>
               </div>
             </div>
             <div class="user_chat d-none" data-user="6">
               <div class="box_chat send">
                 <p>questo e il messaggio scritto dall utente</p>
                 <span>12:46</span>
+                <div class="arrow">
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="dropdown">
+                  <ul class="list-unstyled">
+                    <li>Info Messaggio</li>
+                    <li>Cancella Messaggio</li>
+                  </ul>
+                </div>
               </div>
               <div class="box_chat receive">
                 <p>davide</p>
                 <span>12:46</span>
+                <div class="arrow">
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="dropdown">
+                  <ul class="list-unstyled">
+                    <li>Info Messaggio</li>
+                    <li>Cancella Messaggio</li>
+                  </ul>
+                </div>
               </div>
             </div>
             <div class="user_chat d-none" data-user="7">
               <div class="box_chat send">
                 <p>questo e il messaggio scritto dall utente</p>
                 <span>12:46</span>
+                <div class="arrow">
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="dropdown">
+                  <ul class="list-unstyled">
+                    <li>Info Messaggio</li>
+                    <li>Cancella Messaggio</li>
+                  </ul>
+                </div>
               </div>
               <div class="box_chat receive">
                 <p>federico</p>
                 <span>12:46</span>
+                <i class="fas fa-chevron-down"></i>
+                <div class="dropdown">
+                  <ul class="list-unstyled">
+                    <li>Info Messaggio</li>
+                    <li>Cancella Messaggio</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>

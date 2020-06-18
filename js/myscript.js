@@ -73,7 +73,6 @@ $(document).on('.message input', 'input', function () {
     var minutiCorrenti = data.getMinutes();
     var oraAttuale = aggiungiZeroAllaData(oraCorrente) + ':' + aggiungiZeroAllaData(minutiCorrenti);
     nuovoMessaggio.children('.box_chat span').text(oraAttuale);
-    $('.chat').scrollTop('.user_chat').height();
     // e lo appendo alla chat
     $('.user_chat').append(nuovoMessaggio);
     // pulisco l input
@@ -87,9 +86,15 @@ $(document).on('.message input', 'input', function () {
 
 // funzione per ricevere il messaggio
  function riceviMessaggio() {
-   // qua ho provato ad usare una versione abbreviata e concatenata
-  $('.template .box_chat p').text('ok');
-  $('.template .box_chat').clone().addClass('receive').appendTo('.user_chat');
+  var nuovoMessaggioRisposta = $('.template .box_chat').clone();
+  nuovoMessaggioRisposta.children('.box_chat p').text('ok');
+  nuovoMessaggioRisposta.addClass('receive');
+  var data = new Date();
+  var oraCorrente = data.getHours();
+  var minutiCorrenti = data.getMinutes();
+  var oraAttuale = aggiungiZeroAllaData(oraCorrente) + ':' + aggiungiZeroAllaData(minutiCorrenti);
+  nuovoMessaggioRisposta.children('.box_chat span').text(oraAttuale);
+  $('.user_chat').append(nuovoMessaggioRisposta);
   ScrollaPagina();
   }
 

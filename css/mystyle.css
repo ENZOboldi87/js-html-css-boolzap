@@ -11,6 +11,11 @@ img.avatar {
   margin-right: auto;
   cursor: pointer;
 }
+
+.noti-text, .access_name_contact {
+  font-size: 16px;
+  font-weight: 400;
+}
 /* ends general rules */
 
 /* top green bar  */
@@ -49,12 +54,19 @@ img.avatar {
     height: 100%;
   }
 
+  .sidebar > .contacts {
+    height: calc(100% - 198px);
+    overflow-y: auto;
+    background: #ffffff;
+  }
+
   /* top header bar  */
   .sidebar > .top_header_bar {
     justify-content: flex-end;
     align-items: center;
     padding: 10px;
     background-color: #e0e0e0;
+    min-height: 74px;
   }
 
   .top_header_bar>i, .icons>i {
@@ -80,16 +92,13 @@ img.avatar {
     color: #9de1fe;
   }
 
-  .notification_bar h2, .contact h2 {
-    font-size: 16px;
-    font-weight: 400;
-  }
-
   .notification_bar h3, .contact h3  {
     text-decoration: underline;
     cursor: pointer;
     font-size: 12.5px;
     color: #7a7a7a;
+    font-size: 16px;
+    font-weight: 400;
   }
   /* ends notification bar */
 
@@ -156,12 +165,6 @@ img.avatar {
     margin-right: 10px;
   }
 
-  .sidebar > .contacts {
-    height: calc(100% - 190px);
-    overflow-y: auto;
-    background: #ffffff;
-  }
-
   #date{
     align-self: baseline;
     padding-top: 10px;
@@ -204,6 +207,7 @@ img.avatar {
   }
   /* ends content top header */
 
+  /* content chat */
   .content .chat {
     height: 100%;
     background-image: url(../img/mine.jpg);
@@ -224,19 +228,31 @@ img.avatar {
     display: flex;
   }
 
-
   .content .chat .box_chat {
     position: relative;
-    max-width: 260px;
     border-radius: 8px;
-    margin: 16px 0;
-    padding: 10px;
-    line-height: 22px;
+    padding: 0px 5px 0px 6px;
+    max-width: 60%;
+    min-width: 12%;
+  }
+
+  .box_chat>i{
+    position: absolute;
+    top: 5px;
+    right: 9px;
+  }
+
+  .box_chat .dropdown {
+    display: none;
   }
 
   .box_chat>span {
+    font-size: 0.7em;
     float: right;
-    font-size: 12px;
+  }
+
+  .box_chat>p {
+    padding: 5px 30px 0px 10px;
   }
 
   .content .chat .receive {
@@ -248,7 +264,6 @@ img.avatar {
     margin-left: auto;
     background-color: rgb(208, 247, 183);
   }
-
 
   .content > .message {
     display: flex;
