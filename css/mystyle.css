@@ -236,14 +236,16 @@ img.avatar {
     min-width: 12%;
   }
 
-  .box_chat>i{
+  .box_chat i{
     position: absolute;
     top: 5px;
     right: 9px;
+    cursor: pointer;
+    display: none;
   }
 
-  .box_chat .dropdown {
-    display: none;
+  .box_chat:hover i{
+    display: block;
   }
 
   .box_chat>span {
@@ -271,6 +273,27 @@ img.avatar {
     align-items: center;
     background-color: #f3eeea;
     padding: 10px;
+  }
+
+  .option {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 136px;
+    border-radius: 4px;
+    padding: 5px;
+    background-color: #f4f7f4;
+    text-align: center;
+  }
+
+  .option li {
+    margin: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .option li:hover {
+    text-decoration: underline;
   }
 
   .message input {

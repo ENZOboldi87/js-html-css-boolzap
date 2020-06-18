@@ -53,6 +53,16 @@ $(document).on('.message input', 'input', function () {
  }
 });
 
+// click sull icona dropdown
+$(document).on('click', '.box_chat i', function() {
+    dropdown($(this));
+});
+
+// click su elmina messaggio
+$(document).on('click', '.delete', function() {
+    eliminaMessaggio($(this));
+});
+
 
 // FUNZIONI
 
@@ -67,6 +77,7 @@ $(document).on('.message input', 'input', function () {
     nuovoMessaggio.children('.box_chat p').text(messaggio);
     // e lo appendo alla classe send(messaggio inviato)
     nuovoMessaggio.addClass('send');
+
     // inserisco la data
     var data = new Date();
     var oraCorrente = data.getHours();
@@ -86,17 +97,17 @@ $(document).on('.message input', 'input', function () {
 
 // funzione per ricevere il messaggio
  function riceviMessaggio() {
-  var nuovoMessaggioRisposta = $('.template .box_chat').clone();
-  nuovoMessaggioRisposta.children('.box_chat p').text('ok');
-  nuovoMessaggioRisposta.addClass('receive');
-  var data = new Date();
-  var oraCorrente = data.getHours();
-  var minutiCorrenti = data.getMinutes();
-  var oraAttuale = aggiungiZeroAllaData(oraCorrente) + ':' + aggiungiZeroAllaData(minutiCorrenti);
-  nuovoMessaggioRisposta.children('.box_chat span').text(oraAttuale);
-  $('.user_chat').append(nuovoMessaggioRisposta);
-  ScrollaPagina();
-  }
+    var nuovoMessaggioRisposta = $('.template .box_chat').clone();
+    nuovoMessaggioRisposta.children('.box_chat p').text('ok');
+    nuovoMessaggioRisposta.addClass('receive');
+    var data = new Date();
+    var oraCorrente = data.getHours();
+    var minutiCorrenti = data.getMinutes();
+    var oraAttuale = aggiungiZeroAllaData(oraCorrente) + ':' + aggiungiZeroAllaData(minutiCorrenti);
+    nuovoMessaggioRisposta.children('.box_chat span').text(oraAttuale);
+    $('.user_chat').append(nuovoMessaggioRisposta);
+    ScrollaPagina();
+};
 
 // funzione che aggiunge uno zero alla data
  function aggiungiZeroAllaData(numero) {
@@ -123,9 +134,29 @@ $(document).on('.message input', 'input', function () {
      } else {
        $(this).hide();
      }
-
    });
-
  }
+
+// funzione per le dropdown
+ function dropdown(selezionato) {
+   var opzioneTemplate = $('.template .option').clone();
+   var opzioneChat = $('.box_chat .option');
+   opzioneChat.remove();
+   if (!selezionato.siblings().hasClass('option')) {
+     selezionato.parent().append(opzioneTemplate);
+   } else {
+     opzioneTemplate.remove();
+   }
+ }
+
+// funzione per eliminare il messaggio
+ function eliminaMessaggio(messaggio_selezioanto) {
+   var messaggio = messaggio_selezioanto.closest('.box_chat');
+   messaggio.remove();
+ }
+
+
+
+
 
 });
