@@ -26,42 +26,41 @@ $(document).ready(function() {
 
 });
 
-// quando passo il cursore sulle chat da effetto hover
- $('.contacts ul li').hover(function() {
-   $(this).addClass('selected_hover');
- }, function() {
-   $(this).removeClass('selected_hover');
- });
+    // quando passo il cursore sulle chat da effetto hover
+   $('.contacts ul li').hover(function() {
+     $(this).addClass('selected_hover');
+   }, function() {
+     $(this).removeClass('selected_hover');
+   });
 
- // cerca contatto
- $('#search').keyup(function() {
-   Cerca();
- });
+   // cerca contatto
+   $('#search').keyup(function() {
+     Cerca();
+   });
 
-// quando premo invio e invia il messaggio
- $('.message input').keyup(function() {
-   if (event.which === 13 || event.keyCode === 13) {
-     invioMessaggio();
-     $('.teleg').hide();
-     $('.microph').show();
-   }
- });
+   // quando premo invio e invia il messaggio
+   $('.message input').keyup(function() {
+     if (event.which === 13 || event.keyCode === 13) {
+       invioMessaggio();
+       $('.teleg').hide();
+       $('.microph').show();
+     }
+   });
 
-// invia il messaggio cliccando sull icona quando ce del testo
- $('.teleg').click(function() {
-   if ($('.message input').val().trim().length > 0) {
-     invioMessaggio();
-   }
- });
+   // invia il messaggio cliccando sull icona quando ce del testo
+   $('.teleg').click(function() {
+     if ($('.message input').val().trim().length > 0) {
+       invioMessaggio();
+     }
+   });
 
-// invia messaggio vocale se cliccando sul microfono
-$('.microph').click(function() {
-    alert('invia messaggio vocale');
-  
-});
+   // invia messaggio vocale se cliccando sul microfono
+    $('.microph').click(function() {
+      alert('invia messaggio vocale');
+    });
 
-// cambio icona se ho del testo nell input
-$(document).on('.message input', 'input', function () {
+    // cambio icona se ho del testo nell input
+    $(document).on('.message input', 'input', function () {
  if ($(this).val().trim().length === 0) {
    $('.teleg').hide();
    $('.microph').show();
@@ -72,18 +71,18 @@ $(document).on('.message input', 'input', function () {
  }
 });
 
-// click sull icona dropdown
-$(document).on('click', '.box_chat i', function() {
-    dropdown($(this));
-});
+    // click sull icona dropdown
+    $(document).on('click', '.box_chat i', function() {
+        dropdown($(this));
+    });
 
-// click su elmina messaggio
-$(document).on('click', '.delete', function() {
+    // click su elmina messaggio
+    $(document).on('click', '.delete', function() {
     eliminaMessaggio($(this));
 });
 
 
-// FUNZIONI
+// ------------------- FUNZIONI ----------------------
 
 // funzione per inviare il messaggio
  function invioMessaggio() {
