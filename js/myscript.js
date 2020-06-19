@@ -5,20 +5,26 @@ $(document).ready(function() {
 
   // al click sulle chat
   $('.contacts ul li').click(function(){
-   // effetto sulla chat selezionata(grigio scuro)
-   $('ul li').removeClass('selected');
-   $(this).addClass('selected');
-   // in fase beta: mostrare le chat in base al numero(data element 1,2,3,4 etc)
-   var dataElement = $(this).attr('data-element');
-   if ($('.chat .user_chat').hasClass('d-none')) {
-     $('.chat .user_chat').removeClass('d-flex');
-   }
-   var selettore = '.chat .user_chat[data-user="' + dataElement + '"]';
-   $(selettore).addClass('d-flex');
-   // quando si seleziona una chat il contenuto viene mostrato e viene nascosta la schermata homepage
-   $('.homepage-content').hide();
-   $('.content').show();
- })
+  // quando si seleziona una chat il contenuto viene mostrato e viene nascosta la schermata homepage
+  $('.homepage-content').hide();
+  $('.content').show();
+
+  // effetto sulla chat selezionata(grigio scuro)
+  $('ul li').removeClass('selected');
+  $(this).addClass('selected');
+
+  var dataElement = $(this).attr('data-element');
+  var selettore2 = '.top_header_bar .contact[data-head="' + dataElement + '"]';
+  var selettore = '.chat .user_chat[data-user="' + dataElement + '"]';
+
+  if ($('.contacts ul li').hasClass('selected')) {
+    $(selettore2).addClass('d-flex');
+    $(selettore2).siblings().removeClass('d-flex');
+    $(selettore).addClass('d-flex');
+    $(selettore).siblings().removeClass('d-flex');
+ }
+
+});
 
 // quando passo il cursore sulle chat da effetto hover
  $('.contacts ul li').hover(function() {
@@ -40,6 +46,19 @@ $(document).ready(function() {
      $('.microph').show();
    }
  });
+
+// invia il messaggio cliccando sull icona quando ce del testo
+ $('.teleg').click(function() {
+   if ($('.message input').val().trim().length > 0) {
+     invioMessaggio();
+   }
+ });
+
+// invia messaggio vocale se cliccando sul microfono
+$('.microph').click(function() {
+    alert('invia messaggio vocale');
+  
+});
 
 // cambio icona se ho del testo nell input
 $(document).on('.message input', 'input', function () {
@@ -85,7 +104,7 @@ $(document).on('click', '.delete', function() {
     var oraAttuale = aggiungiZeroAllaData(oraCorrente) + ':' + aggiungiZeroAllaData(minutiCorrenti);
     nuovoMessaggio.children('.box_chat span').text(oraAttuale);
     // e lo appendo alla chat
-    $('.user_chat').append(nuovoMessaggio);
+    $('.user_chat.d-flex').append(nuovoMessaggio);
     // pulisco l input
     $('input').val('');
     // scrollo la pagina
@@ -105,7 +124,7 @@ $(document).on('click', '.delete', function() {
     var minutiCorrenti = data.getMinutes();
     var oraAttuale = aggiungiZeroAllaData(oraCorrente) + ':' + aggiungiZeroAllaData(minutiCorrenti);
     nuovoMessaggioRisposta.children('.box_chat span').text(oraAttuale);
-    $('.user_chat').append(nuovoMessaggioRisposta);
+    $('.user_chat.d-flex').append(nuovoMessaggioRisposta);
     ScrollaPagina();
 };
 
@@ -150,13 +169,10 @@ $(document).on('click', '.delete', function() {
  }
 
 // funzione per eliminare il messaggio
- function eliminaMessaggio(messaggio_selezioanto) {
-   var messaggio = messaggio_selezioanto.closest('.box_chat');
+ function eliminaMessaggio(messaggioSelezioanto) {
+   var messaggio = messaggioSelezioanto.closest('.box_chat');
    messaggio.remove();
  }
-
-
-
 
 
 });

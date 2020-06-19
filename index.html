@@ -38,7 +38,7 @@
             </div>
           </div>
           <!-- ends notification bar -->
-        <!-- search bar -->
+          <!-- search bar -->
           <div class="search">
             <div class="box_search">
               <input id="search" type="search" value="" placeholder="Search or start a new chat">
@@ -128,20 +128,19 @@
                     <span id="date">17:53</span>
                 </div>
               </li>
-              </ul>
+            </ul>
           </div>
           <!-- ends contacts bar-->
         </div>
         <!-- ends left sidebar -->
         <!-- content -->
         <div class="homepage-content">
-        <h1 class="text-center">Homepage personalizzata all'accesso dell applicazione</h1>
+          <h1 class="text-center">Homepage personalizzata all'accesso dell applicazione</h1>
         </div>
         <div class="content float-left">
-
           <!-- top header content -->
           <div class="top_header_bar d-flex">
-            <div class="contact d-flex" data-head="0">
+            <div class="contact d-none" data-head="0">
               <div class="image-contact">
                 <img class="avatar" src="img/avatar_1.jpg" alt="profile_picture">
               </div>
@@ -155,7 +154,7 @@
                 <img class="avatar" src="img/avatar_2.jpg" alt="profile_picture">
               </div>
               <div class="access_contact">
-                <h2>Fabio</h2>
+                <h2 class="access_name_contact">Fabio</h2>
                 <h3>Ultimo accesso oggi alle <span id="time-last-access">15:40</span></h3>
               </div>
             </div>
@@ -164,7 +163,7 @@
                 <img class="avatar" src="img/avatar_3.jpg" alt="profile_picture">
               </div>
               <div class="access_contact">
-                <h2>Samuele</h2>
+                <h2 class="access_name_contact">Samuele</h2>
                 <h3>Ultimo accesso oggi alle <span id="time-last-access">15:40</span></h3>
               </div>
             </div>
@@ -173,7 +172,7 @@
                 <img class="avatar" src="img/avatar_4.jpg" alt="profile_picture">
               </div>
               <div class="access_contact">
-                <h2>Alessandro B.</h2>
+                <h2 class="access_name_contact">Alessandro B.</h2>
                 <h3>Ultimo accesso oggi alle <span id="time-last-access">15:40</span></h3>
               </div>
             </div>
@@ -182,7 +181,7 @@
                 <img class="avatar" src="img/avatar_5.jpg" alt="profile_picture">
               </div>
               <div class="access_contact">
-                <h2>Alessandro L.</h2>
+                <h2 class="access_name_contact">Alessandro L.</h2>
                 <h3>Ultimo accesso oggi alle <span id="time-last-access">15:40</span></h3>
               </div>
             </div>
@@ -191,7 +190,7 @@
                 <img class="avatar" src="img/avatar_6.jpg" alt="profile_picture">
               </div>
               <div class="access_contact">
-                <h2>Claudia</h2>
+                <h2 class="access_name_contact">Claudia</h2>
                 <h3>Ultimo accesso oggi alle <span id="time-last-access">15:40</span></h3>
               </div>
             </div>
@@ -200,7 +199,7 @@
                 <img class="avatar" src="img/avatar_7.jpg" alt="profile_picture">
               </div>
               <div class="access_contact">
-                <h2>Davide</h2>
+                <h2 class="access_name_contact">Davide</h2>
                 <h3>Ultimo accesso oggi alle <span id="time-last-access">15:40</span></h3>
               </div>
             </div>
@@ -209,7 +208,7 @@
                 <img class="avatar" src="img/avatar_8.jpg" alt="profile_picture">
               </div>
               <div class="access_contact">
-                <h2>Federico</h2>
+                <h2 class="access_name_contact">Federico</h2>
                 <h3>Ultimo accesso oggi alle <span id="time-last-access">15:40</span></h3>
               </div>
             </div>
@@ -399,6 +398,8 @@
               </div>
             </div>
           </div>
+          <!-- ends chat -->
+          <!-- input message -->
           <div class="message">
             <i class="far fa-smile"></i>
             <input type="text" name="" value="" placeholder="Scrivi un messaggio">
@@ -409,11 +410,13 @@
               <i class="fas fa-microphone"></i>
             </div>
           </div>
+          <!-- ends input message -->
         </div>
       </div>
     </div>
   </main>
-
+  <!-- ends main -->
+<!-- template -->
   <div class="template">
     <div class="box_chat">
       <p class="text-break"></p>
@@ -425,6 +428,8 @@
       <li class="delete">Delete message</li>
     </ul>
   </div>
+<!-- ends template -->
+
   <script src="js/myscript.js" charset="utf-8"></script>
   </body>
 </html>
