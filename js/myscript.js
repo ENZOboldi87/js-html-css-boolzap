@@ -26,6 +26,9 @@ $(document).ready(function() {
 
 });
 
+
+
+
     // quando passo il cursore sulle chat da effetto hover
    $('.contacts ul li').hover(function() {
      $(this).addClass('selected_hover');
@@ -87,6 +90,7 @@ $(document).ready(function() {
 // funzione per inviare il messaggio
  function invioMessaggio() {
    var messaggio = $('.message input').val();
+   var chatCorrente = $('.user_chat.d-flex');
    // se il messaggio e vuoto non fare nulla, altrimenti
    if (messaggio != '') {
      // clono il template
@@ -96,6 +100,7 @@ $(document).ready(function() {
     // e lo appendo alla classe send(messaggio inviato)
     nuovoMessaggio.addClass('send');
 
+
     // inserisco la data
     var data = new Date();
     var oraCorrente = data.getHours();
@@ -103,7 +108,8 @@ $(document).ready(function() {
     var oraAttuale = aggiungiZeroAllaData(oraCorrente) + ':' + aggiungiZeroAllaData(minutiCorrenti);
     nuovoMessaggio.children('.box_chat span').text(oraAttuale);
     // e lo appendo alla chat
-    $('.user_chat.d-flex').append(nuovoMessaggio);
+    $(chatCorrente).append(nuovoMessaggio);
+    $('.contacts ul li.selected').find('h3').text(messaggio);
     // pulisco l input
     $('input').val('');
     // scrollo la pagina
@@ -123,6 +129,7 @@ $(document).ready(function() {
     var minutiCorrenti = data.getMinutes();
     var oraAttuale = aggiungiZeroAllaData(oraCorrente) + ':' + aggiungiZeroAllaData(minutiCorrenti);
     nuovoMessaggioRisposta.children('.box_chat span').text(oraAttuale);
+    $('.contacts ul li.selected').find('h3').text('ok');
     $('.user_chat.d-flex').append(nuovoMessaggioRisposta);
     ScrollaPagina();
 };
